@@ -1,38 +1,177 @@
-             {{ if .Params.category }}
-                    {{ $category_page := $.Site.GetPage "page" ( $.Params.category | strings.TrimPrefix "content/" ) }}
-                    <h2 class="product__category">
-                        <a href="{{ $category_page.URL }}"> {{ $category_page.Title }} </a>
-                    </h2>
-                {{ end }}
-                <div class="product__price">
-                    ${{ .Params.price }}
-                </div>
+<!DOCTYPE html>
+<html lang="en">
 
-                <article class="product__description">
-                    {{ .Params.description }}
-                </article>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Planty - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="/theme/planty/" />
 
-                {{ $include_dict = dict "product_page" . }}
-                {{ partial "buy_button.html" $include_dict }}
+  
+    <meta property="og:title" content="Planty"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="/theme/planty/"/>
+    <meta property="og:description" content="Planty is an e-commerce ready theme powered by Snipcart."/>
+     
+    
+    
+        
+        
+        
+            <meta property="og:image" content="/capture/snipcart-stackbit-theme-planty.png">
+        
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@jamstackthemes"/>
+    <meta name="twitter:creator" content="@jamstackthemes"/>
+
+
+  
+  
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.34de20aa144073e6816f7c2a9a67860a3cd9dbfc3306a752775cf5a4c3ae08fe.css">
+  
+
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+
+  
+
+</head>
+
+<body id="" class="page page-theme-single-demo">
+  
+    
+
+
+  
+     
+    
+    
+    <div class="demo">
+        <div class="container">
+            <div class="logo d-none d-md-block">
+                <a href="/" title="Jamstack Themes">Jamstack Themes </a>
             </div>
-        </section>
 
-        {{ if .Params.category }}
-            <section class="content__row">
-                <h2 class="content__row-title">Related</h2>
-                {{ $product_pages := where ((($.Site.GetPage "section" "/products").Pages).ByParam "order") "Params.id" "!=" $.Params.id }}
-                {{ $category_page := $.Site.GetPage "page" ( $.Params.category | strings.TrimPrefix "content/" ) }}
-                {{ $include_dict = dict "product_pages" $product_pages "category_url" $category_page.URL "cssClass" "store__product-grid" "Site" $.Site }}
+            <div class="demo-heading">
+                <h1 class="demo-title">Planty</h1>
+                <div class="theme-tags d-none d-lg-block">
+                    
+                                <a class="icon" href="/ssg/unibit/" title="Unibit">
+  <img width="20" height="20" alt="Unibit" src="/images/icons/unibit.svg" />
+</a>
+                            
+                        
+                                <a class="icon" href="/ssg/jekyll/" title="Jekyll">
+  <img width="20" height="20" alt="Jekyll" src="/images/icons/jekyll.svg" />
+</a>
+                            
+                        
+                                <a class="icon" href="/ssg/hugo/" title="Hugo">
+  <img width="20" height="20" alt="Hugo" src="/images/icons/hugo.svg" />
+</a>
+                            
+                        
+                                <a class="icon" href="/ssg/gatsby/" title="Gatsby">
+  <img width="20" height="20" alt="Gatsby" src="/images/icons/gatsby.svg" />
+</a>
+                            
+                        
+                                <a class="icon" href="/ssg/next/" title="Next">
+  <img width="20" height="20" alt="Next" src="/images/icons/next.svg" />
+</a>
+                            
+                        
+                    
 
-                {{ partial "product_grid.html" $include_dict }}
-            </section>
-        {{ end }}
+                    
+                                
+                                    <a class="icon" href="/cms/forestry/" title="Forestry">
+  <img width="20" height="20" alt="Forestry" src="/images/icons/forestry.svg" />
+</a>
+                                
+                            
+                        
+                                
+                                    <a class="icon" href="/cms/netlifycms/" title="NetlifyCMS">
+  <img width="20" height="20" alt="NetlifyCMS" src="/images/icons/netlifycms.svg" />
+</a>
+                                
+                            
+                        
+                                
+                                
+                            
+                        
+                    
 
-        <a href="{{ "/store" | relURL }}" class="content__row content__row--full-width content__row--mb-0 product__back-to-store"{{ if .Site.Params.bg_image_product }} style="background-image: url('{{ $.Site.Params.bg_image_product | relURL }}')"{{ end }}>
-            <svg width="20" height="10" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.739 4.309h17.011v1.284h-17.11l3.43 3.396-0.895 0.886-4.924-4.875 4.924-4.875 0.895 0.886-3.331 3.298z"></path>
-            </svg>
-            see all products
-        </a>
-    </main>
-{{ end }}
+                    
+                                
+                                    <a class="icon" href="/css/scss/" title="SCSS">
+  <img width="20" height="20" alt="SCSS" src="/images/icons/scss.svg" />
+</a>
+                                
+                            
+                        
+                    
+
+                </div>
+            </div>
+            <div class="action-buttons">
+                <a class="action-button action-button-outline action-button-info" href="/theme/planty/">Theme Info</a>
+                <a class="action-button action-button-outline action-button-github d-none d-md-block"
+                   data-action="github" data-context="demo" data-name="Planty" href="https://github.com/snipcart/stackbit-theme-planty"
+                   target="_blank" rel="nofollow noopener">Github</a>
+                
+                    
+                        
+                            <a class="action-button action-button-fill action-button-stackbit" data-action="stackbit"
+                               data-context="demo" data-name="Planty"
+                               href="https://app.stackbit.com/create?theme=https://github.com/snipcart/stackbit-theme-planty&ref=jst&utm_source=jamstackthemes&utm_medium=referral&utm_campaign=custom_themes&utm_content=demo"
+                               target="_blank" rel="noopener nofollow">Create Site</a>
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+    <iframe class="iframe-preview" width="100%" src="https://stackbit-theme-planty.netlify.com"></iframe>
+
+
+  
+    
+
+
+  
+
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var t=analytics.methods[e];analytics[t]=analytics.factory(t)}analytics.load=function(e,t){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+e+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=t};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load("rDvabEVRVBXFlFShe2CE7t2kAGb1juBi");
+      analytics.page();
+    }}();
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+    <script type="text/javascript" src="/js/scriptsBundle.min.53ace3ee82e76d0f11f34fecc663b83d8a8f6094ed5b8aec5ff1741cd76072dd.js"></script>
+  
+
+</body>
+</html>
