@@ -1,9 +1,119 @@
-{{ define "content" }}
-<main class="content{{ if .Params.page_css_class }} {{ $.Params.page_css_class }}{{ end }}">
-    {{ range $section := .Params.sections }}
-    {{ $include_dict := dict "section" $section "page" $ "Site" $.Site }}
-    {{ $component := print $section.type ".html" }}
-    {{ partial $component $include_dict }}
-    {{ end }}
-</main>
-{{ end }}
+<html> <head>
+    <link rel="stylesheet" href="ncg.css">
+    <link media="screen and (max-width:500px)" rel="stylesheet" href="mobile.css" >
+</head>
+
+<body>
+         <!-- navbar - barra di navigazione -->
+        <header>
+                    <nav class="navbar">
+                        <div class="container">
+				<a href="https://nebrodicostruzionisrl.wordpress.com/" id= "titolonav">Nebrodi Costruzioni Generali SRL </a>                             
+ 				<ul> 
+				   <a href="nebrodi.html">HOME </a> 
+				   <a href="about.html"> SU DI NOI</a> 
+				   <a href="lavori.html">LAVORI</a>
+				   <a href="contattaci.html">CONTATTACI</a>
+			</div> 
+                    </nav>
+
+        </header> 
+
+  <!-- sez1 - titolo e immagine, dove c'è una sottosezione x titolo-->
+<section id= "sez1">
+	<section id="titles">
+		<h1> NEBRODI COSTRUZIONI GENERALI S.R.L. </h1>
+		<h3> Dove la tua soddisfazione è il nostro lavoro </h3>
+	</section>
+</section>   
+
+  <!-- sezione con tasti come chi siamo, la nostar storia -->
+<section>
+	<div id= "cosa">
+  		<h2>Chi siamo? </h2>
+  		<p> Siamo un azienda nata nel 2009 con l'acquisizione del ramo aziendale appartenente alla ditta Artigiana del socio lavoratore Trovato Silvestro...</p>
+  		<button type: "submit">
+  			<b> LA NOSTRA STORIA </b>
+ 		 </button>
+  
+ 	 </div>
+</section>  	
+
+  <!-- sezione con cosa ti puoi aspettare -->
+	<section>
+		  <div id="sezionea">
+  			<h2> Cosa ti puoi aspettare da noi? </h2>
+ 			<ul>
+				<div id="img1"> 
+					<h3>Professionalità, <span>con personale altamente specializzato </span> </h3> <img id="ima1" src="img/workers.jpg">  
+				</div>
+
+				<div id="img2">
+  					<h3>Esperienza, <span>vantiamo oltre 50 anni d'esperienza</span></h3> <img id="ima2" src="img/plan.jpg">  
+				</div>
+  			</ul>
+  
+ 		  </div>
+		<div id="img3">
+			<h2>ESPLORA I NOSTRI LAVORI </h2>
+			<img id="ima3" src="img/plan.jpg">	<!-- foto di esempio, mettere foto -->
+			
+		</div>
+	</section>
+</body>
+
+  <!-- sidebar -->
+<section id= "barrasotto">
+
+
+		<div id="dove"> 	
+			<h2> Dove ci troviamo? </h2>
+			<p> La nostra sede legale si trova a Troina (EN) in Via Nazionale 318 int.b </p>		
+		</div>
+
+		<div id= "contatti"> 
+			<h2> <b>Categorie</b> </h2> 
+			<a href="nebrodi.html"> HOME </a>
+			<a href="lavori.html"> LAVORI </a>
+			<a href="contatti.html"> CONTATTACI </a> 
+		</div>
+
+		<div id="contatti2"> 
+			<h2>Contattaci</h2> 
+			<div id="box-contatti"> 
+				<a> nebrodicostruzioni@virgilio.it </a>
+				<a> Telefono: 0935.072237 </a> 
+				<a> Fax: +39 0935.656731 </a>
+    			 </div> 
+		</div>
+</section>
+
+  <!-- cresits e footer -->
+
+<footer>
+     
+	<small>2020 NEBRODI COSTRUZIONI GENERALI S.R.L.. Designed by Silvestro </small> 
+	<button id="credits">CREDITS </button>
+     
+	<h5 id="lingua"> Italiano </h5>
+</footer>
+
+
+<div class="overlay" id="pop">
+	<div class="popup">
+		<h2>CREDITS - SOURCES</h2>
+		<h3> What are the sources of our photos? </h3>
+
+
+
+		<p>The photos of the Home page are taken from burst.shopify.com by Shopify </p>
+
+<p> Others are photos  took at some building-sites, made by Nebrodi Costruzioni Generali s.r.l.</p>
+
+		<span id="close">X</span>
+	</div>
+
+
+
+<script src="neb.js"></script>
+</html>    
